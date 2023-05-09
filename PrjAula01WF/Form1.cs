@@ -10,17 +10,33 @@ namespace PrjAula01WF
         private void button1_Click(object sender, EventArgs e)
         {
             //código quando o botão logar for clicado
-            if (textBoxLogin.Text == "47393581821")
+
+            string mensagem;
+
+            if (textBoxLogin.Text == String.Empty || textBoxSenha.Text == String.Empty)
             {
-                if (textBoxSenha.Text == "000000")
+                mensagem = "necessário preencher algo";
+            }
+            else
+            {
+                if (textBoxLogin.TextLength != 11 || textBoxSenha.TextLength != 6)
                 {
-                    labelMensagem.Text = "Usuário autenticado!";
+                    mensagem = "preencha os dados corretamente";
                 }
                 else
                 {
-                    labelMensagem.Text = "Usuário rejeitado.";
+                    if (textBoxLogin.Text == "47393581821" && textBoxSenha.Text == "000000")
+                    {
+                        mensagem = "Usuário autorizado!";
+                    }
+                    else
+                    {
+                        mensagem = "Usuário negado.";
+                    }
                 }
             }
+            //labelmensagem.Text = mensagem  //mensagem em um label
+            MessageBox.Show(mensagem, "AVISO!");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,6 +62,21 @@ namespace PrjAula01WF
         private void textBoxSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonVerSenha_Click(object sender, EventArgs e)
+        {
+            textBoxSenha.UseSystemPasswordChar = false;
         }
     }
 }

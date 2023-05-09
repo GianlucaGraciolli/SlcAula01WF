@@ -34,20 +34,22 @@
             LabelLogin = new Label();
             LabelSenha = new Label();
             labelMensagem = new Label();
+            buttonVerSenha = new Button();
             SuspendLayout();
             // 
             // textBoxLogin
             // 
-            textBoxLogin.BackColor = Color.Goldenrod;
+            textBoxLogin.BackColor = Color.FloralWhite;
             textBoxLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxLogin.Location = new Point(294, 146);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(265, 29);
             textBoxLogin.TabIndex = 0;
+            textBoxLogin.TextChanged += textBoxLogin_TextChanged;
             // 
             // textBoxSenha
             // 
-            textBoxSenha.BackColor = Color.Goldenrod;
+            textBoxSenha.BackColor = Color.FloralWhite;
             textBoxSenha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSenha.Location = new Point(294, 226);
             textBoxSenha.Name = "textBoxSenha";
@@ -58,7 +60,7 @@
             // 
             // BotãoEntrar
             // 
-            BotãoEntrar.BackColor = Color.Beige;
+            BotãoEntrar.BackColor = Color.FloralWhite;
             BotãoEntrar.Font = new Font("SuperFrench", 15F, FontStyle.Regular, GraphicsUnit.Point);
             BotãoEntrar.Location = new Point(382, 275);
             BotãoEntrar.Name = "BotãoEntrar";
@@ -72,7 +74,7 @@
             // 
             LabelLogin.AutoSize = true;
             LabelLogin.Font = new Font("Monospac821 BT", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelLogin.Location = new Point(393, 119);
+            LabelLogin.Location = new Point(218, 147);
             LabelLogin.Name = "LabelLogin";
             LabelLogin.Size = new Size(70, 24);
             LabelLogin.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             LabelSenha.AutoSize = true;
             LabelSenha.Font = new Font("Monospac821 BT", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelSenha.Location = new Point(393, 199);
+            LabelSenha.Location = new Point(218, 227);
             LabelSenha.Name = "LabelSenha";
             LabelSenha.Size = new Size(70, 24);
             LabelSenha.TabIndex = 4;
@@ -94,19 +96,30 @@
             // 
             labelMensagem.AutoSize = true;
             labelMensagem.Font = new Font("Monospac821 BT", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMensagem.Location = new Point(304, 364);
+            labelMensagem.Location = new Point(294, 352);
             labelMensagem.Name = "labelMensagem";
-            labelMensagem.Size = new Size(106, 24);
+            labelMensagem.Size = new Size(0, 24);
             labelMensagem.TabIndex = 5;
-            labelMensagem.Text = "Mensagem";
             labelMensagem.Click += labelMensagem_Click;
+            // 
+            // buttonVerSenha
+            // 
+            buttonVerSenha.Font = new Font("SuperFrench", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonVerSenha.Location = new Point(565, 228);
+            buttonVerSenha.Name = "buttonVerSenha";
+            buttonVerSenha.Size = new Size(60, 27);
+            buttonVerSenha.TabIndex = 6;
+            buttonVerSenha.Text = "show";
+            buttonVerSenha.UseVisualStyleBackColor = true;
+            buttonVerSenha.Click += buttonVerSenha_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MintCream;
+            BackColor = Color.PowderBlue;
             ClientSize = new Size(773, 523);
+            Controls.Add(buttonVerSenha);
             Controls.Add(labelMensagem);
             Controls.Add(LabelSenha);
             Controls.Add(LabelLogin);
@@ -115,6 +128,7 @@
             Controls.Add(textBoxLogin);
             Name = "Form1";
             Text = "Banjucas - Login";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,5 +141,6 @@
         private Label LabelLogin;
         private Label LabelSenha;
         private Label labelMensagem;
+        private Button buttonVerSenha;
     }
 }
